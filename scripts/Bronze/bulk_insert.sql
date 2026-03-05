@@ -86,9 +86,6 @@ BEGIN
 		   	 RAISE NOTICE 'ERROR MESSAGE %' , SQLSTATE; 
 	 
 	 END;
-	 
-
-	
 END;
 $$;
 
