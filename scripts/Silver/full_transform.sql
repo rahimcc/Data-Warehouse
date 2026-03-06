@@ -129,10 +129,8 @@ BEGIN
 		
 		
 		RAISE NOTICE 'Truncating erp_cust_az12 table'; 
-		TRUNCATE TABLE silver.erp_cust_az12; 
-		
+		TRUNCATE TABLE silver.erp_cust_az12; 	
 		RAISE NOTICE 'Inserting table to erp_cust_az12';
-		
 		INSERT INTO silver.erp_cust_az12 (cid,bdate,gen)
 		SELECT 
 			CASE WHEN cid LIKE 'NAS%' THEN SUBSTRING(cid,4,LENGTH(cid))
@@ -143,8 +141,8 @@ BEGIN
 			ELSE bdate
 			END as bdate,
 		
-			CASE WHEN UPPER(TRIM(gen)) IN  ('M','Male') THEN 'Male'
-			     WHEN UPPER(TRIM(gen)) IN  ('F','Female') THEN 'Female'
+			CASE WHEN TRIM(gen) IN  ('M','Male') THEN 'Male'
+			     WHEN TRIM(gen) IN  ('F','Female') THEN 'Female'
 			ELSE 'n/a'
 			END as gen
 		
