@@ -10,9 +10,10 @@ CREATE TABLE silver.crm_cust_info (
 	dwh_create_date TIMESTAMP DEFAULT NOW()
 );
 
-
+DROP TABLE silver.crm_prd_info;
 CREATE TABLE silver.crm_prd_info( 
-	prd_id INT, 
+	prd_id INT,
+	cat_id VARCHAR(50),
 	prd_key VARCHAR(50),
 	prd_nm VARCHAR(50),
 	prd_cost INT,
@@ -22,14 +23,14 @@ CREATE TABLE silver.crm_prd_info(
 	dwh_create_date timestamp DEFAULT NOW()
 );
 
-
+DROP TABLE silver.crm_sales_details;
 CREATE TABLE silver.crm_sales_details( 
 	sls_ord_num VARCHAR(50),
 	sls_prd_key VARCHAR(50),
 	sls_cust_id VARCHAR(50),
-	sls_order_dt  INT,
-	sls_ship_dt   INT,
-	sls_due_dt INT,
+	sls_order_dt  DATE,
+	sls_ship_dt   DATE,
+	sls_due_dt DATE,
 	sls_sales INT,
 	sls_quantity INT,
 	sls_price INT,
