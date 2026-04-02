@@ -3,4 +3,4 @@ Data Warehousing Project.
 Project inspried by Data With Bara youtube channel implemented in PostgreSQl 
 
 
-![Architecture Diagram](./Doc/Data_architecture.svg )
+![Architecture Diagram](./Docs/Data_architecture.svg )
